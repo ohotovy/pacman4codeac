@@ -3,8 +3,24 @@
 const stage = new Stage(10,7)
 stage.mount(".container")
 
-const pac = new Pacman(0,0,'open','right',stage.TILEw,stage.TILEh)
-pac.mount(".stage")
+const wall = new Entity(2,4,'wall',stage)
+wall.mount()
+
+const apple1 = new Entity(1,1,'apple',stage)
+apple1.mount()
+
+const apple2 = new Entity(2,1,'apple',stage)
+apple2.mount()
+
+const apple3 = new Entity(3,1,'apple',stage)
+apple3.mount()
+
+const bomb = new Entity(2,5,'bomb',stage)
+bomb.mount()
+
+
+const pac = new Pacman(0,0,'open','right',stage,stage.TILEw,stage.TILEh)
+pac.mount()
 
 // console.log('it works!');
 

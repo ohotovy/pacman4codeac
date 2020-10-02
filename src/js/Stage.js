@@ -1,9 +1,8 @@
-const TILE_SIZE = 85; 
-
 class Stage {
- constructor (TILEw, TILEh) {
- this.TILEw = TILEw;
- this.TILEh = TILEh;
+   constructor (TILEw, TILEh) {
+   this.TILEw = TILEw;
+   this.TILEh = TILEh;
+   this.entities = [];
  }
 
  update() {
@@ -24,4 +23,27 @@ class Stage {
     document.querySelector(parent).appendChild(this.elm)
  }
 
+ collisionDetection(x,y) {
+    //console.log(this.entities[0].xpos);
+   let response;
+   for (let i = 0; i< this.entities.length; i++) {
+         if (x===this.entities[i].xpos && y===this.entities[i].ypos)
+         {
+         return this.entities[i];
+      }  else {response = {type:"clear"}}
+   }
+   return response;
+ }
+
+ removeEntity(entity) {
+   for (let i = 0; i < this.entities.length; i++) {
+      if (this.entities[i]===entity) {
+         this.entities[i].unmount();
+         this.entities.splice(i,1)
+      } 
+   }
+
+   // this.entities[entityNo].unmount();
+   // this.entities.splice(entityNo,1)
+ }
 }
