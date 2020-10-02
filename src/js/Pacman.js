@@ -106,11 +106,6 @@ class Pacman {
         const elm = document.createElement('div');
         elm.classList=`entity entity--pac pac${this.pacgender}-active-${this.paccolor} pac${this.pacgender}--${this.direction}`;
         elm.textContent=`Score: ${this.score}`;
-        /*elm.classList="container";
-        elm.id="app";
-        elm.innerHTML = `
-            <div class="entity entity--pac pac${this.pacgender}-active-${this.paccolor} pac${this.pacgender}--closed">
-        `;*/
         
         document.querySelector('html').addEventListener('keydown',this.execute)
 
