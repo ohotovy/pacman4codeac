@@ -33,6 +33,7 @@ body {
 
   &--pac {
     position: absolute;
+    left: 0px;      // new one
     font-weight: bold;
     text-align: center;
     padding-top: 65px;
@@ -67,6 +68,9 @@ body {
 
   &-active-dark {
     background-image: url('/img/pacboy-active-dark.png');
+  }
+  &--closed {
+    background-position-x: right;
   }
 }
 
