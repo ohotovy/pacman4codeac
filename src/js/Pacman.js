@@ -1,5 +1,5 @@
 class Pacman {
-    constructor (xpos,ypos,mouth, direction,parent,maxx,maxy) {
+    constructor (xpos,ypos,mouth, direction,parent,maxx,maxy,pacgender,paccolor) {
         this.xpos = xpos;
         this.ypos = ypos;
         this.mouth = mouth;
@@ -9,7 +9,9 @@ class Pacman {
         this.maxy = maxy-1;
         this.currentCollision = 0;
         this.score = 0;
-        this.execute = this.execute.bind(this)
+        this.execute = this.execute.bind(this);
+        this.pacgender = pacgender;
+        this.paccolor = paccolor;
     }
 
     moveRight() {
@@ -63,9 +65,9 @@ class Pacman {
         }
         pac.style.left = `${this.xpos*TILE_SIZE}px`;
         pac.style.top = `${this.ypos*TILE_SIZE}px`;
-        pac.classList.remove(`pacboy--${this.directionP}`);
-        pac.classList.add(`pacboy--${this.direction}`);
-        pac.classList.toggle('pacboy--closed');
+        pac.classList.remove(`pac${this.pacgender}--${this.directionP}`);
+        pac.classList.add(`pac${this.pacgender}--${this.direction}`);
+        pac.classList.toggle(`pac${this.pacgender}--closed`);
         pac.textContent=`Score: ${this.score}`;
         if(this.currentCollision.type=='bomb') {
             if(Math.random()>0.5) {
@@ -102,12 +104,12 @@ class Pacman {
 
     render() {
         const elm = document.createElement('div');
-        elm.classList=`entity entity--pac pacboy-active-light pacboy--${this.direction}`;
+        elm.classList=`entity entity--pac pac${this.pacgender}-active-${this.paccolor} pac${this.pacgender}--${this.direction}`;
         elm.textContent=`Score: ${this.score}`;
         /*elm.classList="container";
         elm.id="app";
         elm.innerHTML = `
-            <div class="entity entity--pac pacboy-active-light pacboy--closed">
+            <div class="entity entity--pac pac${this.pacgender}-active-${this.paccolor} pac${this.pacgender}--closed">
         `;*/
         
         document.querySelector('html').addEventListener('keydown',this.execute)

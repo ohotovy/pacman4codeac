@@ -101,4 +101,19 @@ body {
   &-active-dark {
     background-image: url('/img/pacgirl-active-dark.png');
   }
+  &--closed {
+    background-position-x: right;
+  }
+  &--left {
+    background-position-y: 255px;
+  }
+  &--right {
+    background-position-y: 0px;
+  }
+  &--up {
+    background-position-y: 85px;
+  }
+  &--down {
+    background-position-y: 170px;
+  }
 }
