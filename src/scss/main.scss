@@ -72,7 +72,22 @@ body {
   &--closed {
     background-position-x: right;
   }
+  &--left {
+    background-position-y: 255px;
+  }
+  &--right {
+    background-position-y: 0px;
+  }
+  &--up {
+    background-position-y: 85px;
+  }
+  &--down {
+    background-position-y: 170px;
+  }
+  
 }
+
+
 
 .pacgirl {
   &-active-light {

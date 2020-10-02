@@ -1,7 +1,10 @@
 'use strict';
 
-const pac = new Pacman(0,300,'open')
-pac.mount("body")
+const stage = new Stage(10,7)
+stage.mount(".container")
+
+const pac = new Pacman(0,0,'open','right',stage.TILEw,stage.TILEh)
+pac.mount(".stage")
 
 // console.log('it works!');
 
