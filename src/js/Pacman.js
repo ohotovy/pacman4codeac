@@ -1,14 +1,16 @@
 class Pacman {
-    constructor (xpos,ypos,mouth) {
+    constructor (xpos,ypos,mouth,direction) {
         this.xpos = xpos;
         this.ypos = ypos;
         this.mouth = mouth;
+        this.direction = direction;
         this.TILE_SIZE = 85;
     }
 
     moveRight() {
         const pac = document.querySelector('.entity--pac');
         this.xpos += this.TILE_SIZE;
+        this.direction = 'right'
     }
 
     update() {
@@ -19,11 +21,7 @@ class Pacman {
 
     render() {
         const elm = document.createElement('div');
-        elm.classList="container";
-        elm.id="app";
-        elm.innerHTML = `
-            <div class="entity entity--pac pacboy-active-light pacboy--closed">
-        `;
+        elm.classList=`entity entity--pac pacboy-active-light pacboy--${direction}`;
         
         document.querySelector('html').addEventListener('keydown',(e) => {
             switch (e.code) {
