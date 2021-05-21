@@ -24,7 +24,6 @@ class Stage {
  }
 
  collisionDetection(x,y) {
-    //console.log(this.entities[0].xpos);
    let response;
    for (let i = 0; i< this.entities.length; i++) {
          if (x===this.entities[i].xpos && y===this.entities[i].ypos)
@@ -42,8 +41,5 @@ class Stage {
          this.entities.splice(i,1)
       } 
    }
-
-   // this.entities[entityNo].unmount();
-   // this.entities.splice(entityNo,1)
  }
 }
