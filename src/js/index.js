@@ -1,5 +1,7 @@
 'use strict';
 
+import {Stage} from './Stage';
+
 const stage = new Stage(mazeW,mazeH)
 stage.mount(".container")
 

@@ -1,4 +1,4 @@
-class Stage {
+export class Stage {
    constructor (TILEw, TILEh) {
    this.TILEw = TILEw;
    this.TILEh = TILEh;
