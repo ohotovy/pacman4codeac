@@ -3,7 +3,7 @@
 const stage = new Stage(mazeW,mazeH)
 stage.mount(".container")
 
-fetch(`http://bootcamp.podlomar.org/api/pacman?width=${mazeW}&height=${mazeH}`)
+fetch(`http:///www.podlomar.bootleg/pacman.php?width=${mazeW}&height=${mazeH}`)
 .then((resp) => resp.json())
 .then((json) => {
     for (let i=0;i<json.walls.length;i++) {
